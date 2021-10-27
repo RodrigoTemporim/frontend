@@ -1,10 +1,6 @@
-import axios from 'axios';
-import dotenv from 'dotenv';
- 
-dotenv.config();
- 
-const api = axios.create({
-    baseURL: process.env.REACT_APP_BACKEND
-})
- 
-export default api;
+const express = require('express')
+const app = express()
+const PORT = process.env.PORT || 3000
+
+app.use(express.static('build'))
+app.listen(PORT, () => console.log('Servidor Front em execução!'))
