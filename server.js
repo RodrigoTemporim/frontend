@@ -1,6 +1,6 @@
-const express = require('express')
+import express, { static } from 'express'
 const app = express()
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3333
  
-app.use(express.static('build'))
+app.use(static('build'))
 app.listen(PORT, () => console.log('Servidor Front em execução!'))
